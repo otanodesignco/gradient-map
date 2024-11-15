@@ -1,2 +1,2 @@
-# stylized-orb
-stylized orb vfx using threejs and some shaders
+# UV Transforms and Utility Methods
+uv transformations and glsl utility methods
