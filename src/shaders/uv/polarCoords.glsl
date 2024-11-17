@@ -35,3 +35,20 @@ vec2 polarCoords(vec2 uv, vec2 center, float radius)
     return vec2( angle / (2.0 * pi ), correctedDist );
 
 }
+
+vec2 polarCoords( vec2 uv, vec2 multiplier, vec2 offset )
+{
+
+    float pi = 3.14159;
+    float pi2 = pi / 2.0;
+
+    vec2 centerUV = uv - 0.5;
+    float distToCenter = length( centerUV );
+    float angle = atan( centerUV.y, centerUV.x );
+    vec2 polarUV = vec2( angle + pi / pi2, distToCenter );
+    polarUV *= multiplier;
+    polarUV.x += offset.x;
+    polarUV.y += offset.y;
+
+    return polarUV;
+}
